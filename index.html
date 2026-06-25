@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
             margin-bottom: 20px;
             font-size: 14px;
         }
-        /* STARÉ HERNÉ MENU */
+        /* OLD-SCHOOL GAMING MENU */
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -64,7 +64,7 @@
             border: 1px solid #3a4b6e;
             margin-bottom: 20px;
         }
-        /* SEKCE STRÁNKY */
+        /* PAGE SECTIONS */
         .page-section {
             display: none;
             text-align: left;
@@ -88,56 +88,56 @@
         <h1>Counter-Strike: Global Offensive</h1>
         <p class="subtitle">[2017 Dedicated Server Portal]</p>
         
-        <!-- Hlavné Menu -->
+        <!-- Navigation Menu -->
         <div class="nav-menu">
             <span class="nav-item active" onclick="showPage('home', this)">Home</span>
             <span class="nav-item" onclick="showPage('download', this)">Download</span>
             <span class="nav-item" onclick="showPage('about', this)">About</span>
         </div>
 
-        <!-- Hlavný obrázok (zostáva viditeľný navrchu) -->
+        <!-- Header Image -->
         <img src="image_3dc3ea.png" alt="CS:GO Server" class="server-img">
 
-        <!-- SEKCE 1: HOME -->
+        <!-- SECTION 1: HOME -->
         <div id="home" class="page-section active">
-            > Vitaj na oficiálnej stránke nášho nostalgického CS:GO servera!<br>
-            > Server beží na starom stabilnom builde z roku 2017.<br>
-            > Aktuálny stav: <span class="status">ONLINE</span><br>
-            > Pripoj sa cez konzolu: <span style="color:#fff;">connect 26.215.51.221:27015</span>
+            > Welcome to the official portal of our nostalgic CS:GO server!<br>
+            > The server runs on a stable, legacy build from 2017.<br>
+            > Current Status: <span class="status">ONLINE</span><br>
+            > Connect via console: <span style="color:#fff;">connect 26.215.51.221:27015</span>
         </div>
 
-        <!-- SEKCE 2: DOWNLOAD -->
+        <!-- SECTION 2: DOWNLOAD -->
         <div id="download" class="page-section">
-            <h3 style="color:#4a90e2; margin-top:0;">Zóna na sťahovanie</h3>
-            <p>Tento web slúži ako aktívny <strong>FastDL repozitár</strong>. Keď sa pripojíš na server, hra si odtiaľto automaticky stiahne všetky chýbajúce mapy (napr. de_resort), modely a zvuky maximálnou rýchlosťou.</p>
-            <p>> FastDL Linka pre server.cfg: <br>
-            <code style="background:#111a24; padding:5px; color:#fff; display:block; margin-top:5px;">sv_downloadurl "https://tvoje-meno.github.io/fastdl/csgo/"</code></p>
+            <h3 style="color:#4a90e2; margin-top:0;">Download Zone</h3>
+            <p>This website acts as an active <strong>FastDL repository</strong> for the server. When you connect, the game will automatically download all custom maps (like de_resort), models, and assets from here at maximum speed.</p>
+            <p>> FastDL configuration line for server.cfg: <br>
+            <code style="background:#111a24; padding:5px; color:#fff; display:block; margin-top:5px;">sv_downloadurl "https://your-username.github.io/fastdl/csgo/"</code></p>
         </div>
 
-        <!-- SEKCE 3: ABOUT -->
+        <!-- SECTION 3: ABOUT -->
         <div id="about" class="page-section">
-            <h3 style="color:#4a90e2; margin-top:0;">O Projekte</h3>
-            <p>Tento server vznikol ako čistá retro nostalgia pre komunitu hráčov, ktorí chcú zažiť Counter-Strike presne v takom stave, v akom bol v roku 2017 – bez zbytočných moderných updatov, s klasickým herným enginom, SourceModom a plne funkčným RTV hlasovaním.</p>
-            <p>Admin tímu velíš ty! 🦾</p>
+            <h3 style="color:#4a90e2; margin-top:0;">About Project</h3>
+            <p>This project was created out of pure retro nostalgia for players who want to experience Counter-Strike exactly how it was back in 2017 – without unnecessary modern updates, featuring the classic engine, SourceMod plugins, and fully functional RTV map voting system.</p>
+            <p>Brought to you by the community. Have fun! 🦾</p>
         </div>
     </div>
 
-    <!-- Jednoduchý skript na prepínanie záložiek -->
+    <!-- Simple Tab Switching Script -->
     <script>
         function showPage(pageId, element) {
-            // Skry všetky sekcie
+            // Hide all sections
             var sections = document.getElementsByClassName('page-section');
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active');
             }
             
-            // Odstráň active triedu z menu
+            // Remove active class from all menu items
             var menuItems = document.getElementsByClassName('nav-item');
             for (var i = 0; i < menuItems.length; i++) {
                 menuItems[i].classList.remove('active');
             }
             
-            // Ukáž vybranú sekciu a označ menu
+            // Show the selected section and mark the menu item active
             document.getElementById(pageId).classList.add('active');
             element.classList.add('active');
         }
