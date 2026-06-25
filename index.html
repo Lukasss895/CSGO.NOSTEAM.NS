@@ -6,72 +6,84 @@
     <title>CS:GO 2017 - Server Portal</title>
     <style>
         body {
+            /* Natiahnutie tvojho obrázka na celé pozadie obrazovky */
+            background-image: url('image_3dc3ea.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-color: #0b0f14;
+            
             color: #bdcbf4;
             font-family: 'Courier New', Courier, monospace;
-            text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
+        
+        /* Priesvitný stredový box pre text a menu */
         .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: rgba(16, 24, 34, 0.9);
-            padding: 30px;
-            border: 2px solid #3a4b6e;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+            width: 100%;
+            max-width: 750px;
+            background: rgba(11, 19, 31, 0.85); /* Tmavomodrý priesvitný efekt */
+            padding: 40px;
+            border: 2px solid #253654;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
+            text-align: center;
+            box-sizing: border-box;
         }
+
         h1 {
             color: #4a90e2;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin-top: 0;
             margin-bottom: 5px;
+            font-size: 28px;
         }
         .subtitle {
             color: #7084a3;
             margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 14px;
+            margin-bottom: 30px;
+            font-size: 13px;
         }
-        /* OLD-SCHOOL GAMING MENU */
+
+        /* MENU - Štýlové textové odkazy */
         .nav-menu {
             display: flex;
             justify-content: center;
-            background: #111a24;
-            border: 1px solid #3a4b6e;
-            padding: 10px;
-            margin-bottom: 20px;
+            gap: 25px;
+            margin-bottom: 30px;
         }
         .nav-item {
             color: #4a90e2;
             text-decoration: none;
-            padding: 5px 20px;
             font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
             text-transform: uppercase;
+            transition: color 0.2s;
         }
         .nav-item:hover {
             color: #fff;
-            background: #1c2e43;
         }
         .nav-item.active {
             color: #00ff00;
-            border-bottom: 2px solid #00ff00;
         }
-        .server-img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #3a4b6e;
-            margin-bottom: 20px;
-        }
-        /* PAGE SECTIONS */
+
+        /* SEKCE S TEXTOM */
         .page-section {
             display: none;
             text-align: left;
-            background: #070a0e;
+            background: rgba(5, 8, 13, 0.9);
             padding: 20px;
             border-left: 3px solid #4a90e2;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 14px;
+            min-height: 120px;
         }
         .page-section.active {
             display: block;
@@ -95,49 +107,43 @@
             <span class="nav-item" onclick="showPage('about', this)">About</span>
         </div>
 
-        <!-- Header Image -->
-        <img src="XhBdWC.webp" alt="CS:GO Server" class="server-img">
-
         <!-- SECTION 1: HOME -->
         <div id="home" class="page-section active">
             > Welcome to the official portal of our nostalgic CS:GO server!<br>
             > The server runs on a stable, legacy build from 2017.<br>
             > Current Status: <span class="status">ONLINE</span><br>
-            > Connect via console: <span style="color:#fff;">connect 26.215.51.221:27015</span>
+            > Connect via console: <span style="color:#fff;">connect [Your_Server_IP]</span>
         </div>
 
         <!-- SECTION 2: DOWNLOAD -->
         <div id="download" class="page-section">
             <h3 style="color:#4a90e2; margin-top:0;">Download Zone</h3>
-            <p>This website acts as an active <strong>FastDL repository</strong> for the server. When you connect, the game will automatically download all custom maps (like de_resort), models, and assets from here at maximum speed.</p>
-            <p>> FastDL configuration line for server.cfg: <br>
-            <code style="background:#111a24; padding:5px; color:#fff; display:block; margin-top:5px;">sv_downloadurl "https://your-username.github.io/fastdl/csgo/"</code></p>
+            <p>This website acts as an active <strong>FastDL repository</strong>. When you connect to the server, all custom maps (like de_resort), models, and assets are downloaded automatically from here at maximum speed.</p>
+            <p>> FastDL line for server.cfg: <br>
+            <code style="background:#111a24; padding:5px; color:#fff; display:block; margin-top:5px; font-size:12px;">sv_downloadurl "https://your-username.github.io/fastdl/csgo/"</code></p>
         </div>
 
         <!-- SECTION 3: ABOUT -->
         <div id="about" class="page-section">
             <h3 style="color:#4a90e2; margin-top:0;">About Project</h3>
-            <p>This project was created out of pure retro nostalgia for players who want to experience Counter-Strike exactly how it was back in 2017 – without unnecessary modern updates, featuring the classic engine, SourceMod plugins, and fully functional RTV map voting system.</p>
+            <p>This project was created out of pure retro nostalgia for players who want to experience Counter-Strike exactly how it was back in 2017 – without unnecessary modern updates, featuring the classic engine, SourceMod plugins, and a fully functional RTV map voting system.</p>
             <p>Brought to you by the community. Have fun! 🦾</p>
         </div>
     </div>
 
-    <!-- Simple Tab Switching Script -->
+    <!-- JavaScript on Tab Switching -->
     <script>
         function showPage(pageId, element) {
-            // Hide all sections
             var sections = document.getElementsByClassName('page-section');
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active');
             }
             
-            // Remove active class from all menu items
             var menuItems = document.getElementsByClassName('nav-item');
             for (var i = 0; i < menuItems.length; i++) {
                 menuItems[i].classList.remove('active');
             }
             
-            // Show the selected section and mark the menu item active
             document.getElementById(pageId).classList.add('active');
             element.classList.add('active');
         }
