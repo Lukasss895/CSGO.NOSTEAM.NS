@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>CS:GO Server - Demos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #262626;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .instruction {
+            background-color: #333;
+            padding: 15px;
+            border-left: 4px solid #f39c12;
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        th {
+            background-color: #333;
+            color: #f39c12;
+        }
+        tr:hover {
+            background-color: #2d2d2d;
+        }
+        .btn-download {
+            background-color: #f39c12;
+            color: #1a1a1a;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .btn-download:hover {
+            background-color: #e67e22;
+        }
+        code {
+            background-color: #111;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #ff7675;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>CS:GO Zápasy & Demá</h1>
+    
+    <div class="instruction">
+        <h3>Ako si pozrieť stiahnuté demo?</h3>
+        <ol>
+            <li>Stiahni súbor <code>.dem</code> pomocou tlačidla nižšie.</li>
+            <li>Presuň ho do zložky s hrou (napr. <code>C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\csgo\</code>).</li>
+            <li>Spusť CS:GO, otvor konzolu a napíš: <code>playdemo nazov_suboru</code></li>
+            <li>Stlačením <code>Shift + F2</code> otvoríš ovládací panel prehrávania.</li>
+        </ol>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Dátum zápasu</th>
+                <th>Mapa</th>
+                <th>Súbor</th>
+                <th>Akcia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>16. 07. 2026</td>
+                <td>de_dust2</td>
+                <td><code>match_20260716_dust2.dem</code></td>
+                <td><a href="demos/match_20260716_dust2.dem" class="btn-download" download>Stiahnuť</a></td>
+            </tr>
+            <tr>
+                <td>16. 07. 2026</td>
+                <td>cs_insertion</td>
+                <td><code>match_20260716_insertion.dem</code></td>
+                <td><a href="demos/match_20260716_insertion.dem" class="btn-download" download>Stiahnuť</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
