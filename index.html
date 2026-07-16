@@ -92,6 +92,47 @@
             color: #00ff00;
             font-weight: bold;
         }
+
+        /* Nové štýly pre tabuľku a inštrukcie v sekcii Demos (zladené s tvojím dizajnom) */
+        .demo-instruction {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-left: 3px solid #f39c12;
+            margin-bottom: 25px;
+            border-radius: 0 4px 4px 0;
+        }
+        .demo-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .demo-table th, .demo-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #253654;
+        }
+        .demo-table th {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+        .demo-table tr:hover {
+            background-color: rgba(74, 144, 226, 0.05);
+        }
+        .btn-download {
+            color: #00ff00;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .btn-download:hover {
+            color: #fff;
+        }
+        .code-highlight {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ff7675;
+        }
     </style>
 </head>
 <body>
@@ -105,6 +146,7 @@
             <span class="nav-item active" onclick="showPage('home', this)">Home</span>
             <span class="nav-item" onclick="showPage('download', this)">Download</span>
             <span class="nav-item" onclick="showPage('about', this)">About</span>
+            <span class="nav-item" onclick="showPage('demos', this)">Demos</span>
         </div>
 
         <!-- SECTION 1: HOME -->
@@ -136,6 +178,46 @@
             <h3 style="color:#4a90e2; margin-top:0;">About Project</h3>
             <p>This project was created out of pure retro nostalgia for players who want to experience Counter-Strike exactly how it was back in 2015 – without unnecessary modern updates, in future include the classic engine, SourceMod plugins, and a fully functional RTV map voting system.</p>
             <p>Brought to you by the community. Have fun! 🦾</p>
+        </div>
+
+        <!-- SECTION 4: DEMOS -->
+        <div id="demos" class="page-section">
+            <h3 style="color:#4a90e2; margin-top:0;">Match Demos</h3>
+            
+            <div class="demo-instruction">
+                <h4 style="color: #f39c12; margin-top: 0; margin-bottom: 10px;">How to watch a downloaded demo?</h4>
+                <ol style="margin: 0; padding-left: 20px;">
+                    <li>Download the <code class="code-highlight">.dem</code> file using the link below.</li>
+                    <li>Move the file into your game directory (usually <code class="code-highlight">...\csgo\</code>).</li>
+                    <li>Launch CS:GO, open developer console, and type: <code class="code-highlight">playdemo file_name</code></li>
+                    <li>Press <code class="code-highlight">Shift + F2</code> to open the demo playback control panel.</li>
+                </ol>
+            </div>
+
+            <table class="demo-table">
+                <thead>
+                    <tr>
+                        <th>Match Date</th>
+                        <th>Map</th>
+                        <th>File Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>16. 07. 2026</td>
+                        <td>de_dust2</td>
+                        <td><code class="code-highlight">match_20260716_dust2.dem</code></td>
+                        <td><a href="demos/match_20260716_dust2.dem" class="btn-download" download>Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>16. 07. 2026</td>
+                        <td>cs_insertion</td>
+                        <td><code class="code-highlight">match_20260716_insertion.dem</code></td>
+                        <td><a href="demos/match_20260716_insertion.dem" class="btn-download" download>Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
