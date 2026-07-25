@@ -27,7 +27,7 @@
         /* Priesvitný stredový box pre text a menu */
         .container {
             width: 100%;
-            max-width: 750px;
+            max-width: 800px;
             background: rgba(11, 19, 31, 0.85); /* Tmavomodrý priesvitný efekt */
             padding: 40px;
             border: 2px solid #253654;
@@ -56,14 +56,14 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 30px;
         }
         .nav-item {
             color: #4a90e2;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             text-transform: uppercase;
             transition: color 0.2s;
@@ -94,7 +94,7 @@
             font-weight: bold;
         }
 
-        /* Nové štýly pre tabuľku a inštrukcie v sekcii Demos (zladené s tvojým dizajnom) */
+        /* Nové štýly pre tabuľku a inštrukcie */
         .demo-instruction {
             background-color: rgba(255, 255, 255, 0.03);
             padding: 15px;
@@ -134,6 +134,9 @@
             border-radius: 4px;
             color: #ff7675;
         }
+        .rank-1 { color: #ffd700; font-weight: bold; }
+        .rank-2 { color: #c0c0c0; font-weight: bold; }
+        .rank-3 { color: #cd7f32; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -150,6 +153,7 @@
             <span class="nav-item" onclick="showPage('demos', this)">Demos</span>
             <span class="nav-item" onclick="showPage('files', this)">Files</span>
             <span class="nav-item" onclick="showPage('majors', this)">Majors</span>
+            <span class="nav-item" onclick="showPage('predictions', this)">Predictions</span>
         </div>
 
         <!-- SECTION 1: HOME -->
@@ -157,8 +161,7 @@
             > Welcome to the official portal of our nostalgic CS:GO server!<br>
             > The server runs on a stable build from 2015.<br>
             > Current Status: <span class="status">ONLINE</span><br>
-            > Connect via console: <span style="color:#fff;">Game: connect 26.215.51.221:27016 GOTV 26.215.51.221:27021
-</span>
+            > Connect via console: <span style="color:#fff;">Game: connect 26.215.51.221:27016 | GOTV: 26.215.51.221:27021</span>
         </div>
 
        <!-- SECTION 2: DOWNLOAD -->
@@ -169,20 +172,17 @@
             How to connect:<br>
             1. Download and install <a href="https://www.radmin-vpn.com/" target="_blank" class="btn-download">Radmin VPN</a>.<br>
             2. Launch and click the Power button, then Join Network.<br>
-            3. Enter Network Name:CS:GO 2017 Nosteam Password:CSGO2017 to join our gaming network Enjoy 😊</p>
+            3. Enter Network Name: <strong>CS:GO 2017 Nosteam</strong> Password: <strong>CSGO2017</strong> to join our gaming network. Enjoy 😊</p>
             
             <p><strong>2. Game Client (CS:GO 2015 Build)</strong><br>
             You must use this exact client version to avoid incompatibility issues:<br>
             <a href="https://drive.google.com/file/d/1j1hj9GKypBTROSnqf4GIL1qlV-DgDISS/view?usp=sharing" target="_blank" class="btn-download">Download CS:GO 2015 Client</a></p>
-            
-            <hr style="border: 0; border-top: 1px solid #253654; margin: 20px 0;">
-            
-    
         </div>
+
         <!-- SECTION 3: ABOUT -->
         <div id="about" class="page-section">
             <h3 style="color:#4a90e2; margin-top:0;">About Project</h3>
-            <p>This project was created out of pure retro nostalgia for players who want to experience Counter-Strike exactly how it was back in 2015 – without unnecessary modern updates,include the classic engine, SourceMod plugins, and a fully functional RTV map voting system and GOTV for future majors.</p>
+            <p>This project was created out of pure retro nostalgia for players who want to experience Counter-Strike exactly how it was back in 2015 – without unnecessary modern updates, including the classic engine, SourceMod plugins, a fully functional RTV map voting system, and GOTV for future majors.</p>
             <p>Brought to you by the community. Have fun! 🦾</p>
         </div>
 
@@ -236,19 +236,19 @@
             <a href="https://drive.google.com/drive/folders/1gvXVLRTaQtpwd52Zybf34cQIubKdcy1t?usp=drive_link" target="_blank" class="btn-download">Download Maps</a></p>
         </div>
 
-        <!-- SECTION 6: MAJORS / MATCHES -->
+        <!-- SECTION 6: MAJORS -->
         <div id="majors" class="page-section">
             <h3 style="color:#4a90e2; margin-top:0;">Classic Majors & Matches 2015 (2026)</h3>
-            <p>> If this server reaches 10 players, we’ll vote on whether to hold a CS:GO tournament; there will also be a commentator for the audience likely speaking a mix of Slovak and English so it should be fun for you. <br>
+            <p>> If this server reaches 10 players, we’ll vote on whether to hold a CS:GO tournament; there will also be a commentator for the audience likely speaking a mix of Slovak and English so it should be fun for you.<br>
             > Streamed live through our GO-TV server or archived for your viewing pleasure.</p>
             
             <table class="demo-table">
                 <thead>
                     <tr>
                         <th>Tournament</th>
-                        <th>Teams/th>
+                        <th>Teams</th>
                         <th>Winner</th>
-                        <th>Date<th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -257,6 +257,48 @@
                         <td>??</td>
                         <td><span style="color: #00ff00;">??</span></td>
                         <td>??</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECTION 7: PREDICTIONS (NOVÉ) -->
+        <div id="predictions" class="page-section">
+            <h3 style="color:#4a90e2; margin-top:0;">Radmin Major - Tipsters Hall of Fame</h3>
+            <p>> Submit your match outcome predictions using our official Google Form and battle for the top 3 leaderboard spots!</p>
+            
+            <div style="text-align: center; margin: 25px 0;">
+                <a href="SEM_LINK_NA_GOOGLE_FORMULAR" target="_blank" class="btn-download" style="background: #1b4965; color: #fff; padding: 12px 20px; border: 1px solid #4a90e2; border-radius: 4px; display: inline-block;">👉 OPEN PREDICTION FORM 👈</a>
+            </div>
+
+            <h4 style="color: #4a90e2; margin-top: 30px;">Leaderboard (Top Tipsters)</h4>
+            <table class="demo-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Tipster Name</th>
+                        <th>Correct Tips</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rank-1">1</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>👑 King of Predictions</td>
+                    </tr>
+                    <tr>
+                        <td class="rank-2">2</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>🥈 Elite Tipster</td>
+                    </tr>
+                    <tr>
+                        <td class="rank-3">3</td>
+                        <td>--</td>
+                        <td>--</td>
+                        <td>🥉 Pro Tipster</td>
                     </tr>
                 </tbody>
             </table>
