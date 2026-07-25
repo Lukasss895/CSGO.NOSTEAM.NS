@@ -55,7 +55,8 @@
         .nav-menu {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            flex-wrap: wrap;
+            gap: 20px;
             margin-bottom: 30px;
         }
         .nav-item {
@@ -93,7 +94,7 @@
             font-weight: bold;
         }
 
-        /* Nové štýly pre tabuľku a inštrukcie v sekcii Demos (zladené s tvojím dizajnom) */
+        /* Nové štýly pre tabuľku a inštrukcie v sekcii Demos (zladené s tvojým dizajnom) */
         .demo-instruction {
             background-color: rgba(255, 255, 255, 0.03);
             padding: 15px;
@@ -148,6 +149,7 @@
             <span class="nav-item" onclick="showPage('about', this)">About</span>
             <span class="nav-item" onclick="showPage('demos', this)">Demos</span>
             <span class="nav-item" onclick="showPage('files', this)">Files</span>
+            <span class="nav-item" onclick="showPage('majors', this)">Majors</span>
         </div>
 
         <!-- SECTION 1: HOME -->
@@ -232,6 +234,40 @@
             </div>
             <p><strong>Custom Maps:</strong><br>
             <a href="https://drive.google.com/drive/folders/1gvXVLRTaQtpwd52Zybf34cQIubKdcy1t?usp=drive_link" target="_blank" class="btn-download">Download Maps</a></p>
+        </div>
+
+        <!-- SECTION 6: MAJORS / MATCHES -->
+        <div id="majors" class="page-section">
+            <h3 style="color:#4a90e2; margin-top:0;">Classic Majors & Matches (2015)</h3>
+            <p>> Relive the legendary showdowns from the golden era of CS:GO esports.<br>
+            > Streamed live through our GO-TV server or archived for your viewing pleasure.</p>
+            
+            <table class="demo-table">
+                <thead>
+                    <tr>
+                        <th>Tournament</th>
+                        <th>Matchup</th>
+                        <th>Status / Winner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ESL One Cologne 2015</td>
+                        <td>Fnatic vs. EnVyUs (Grand Final)</td>
+                        <td><span style="color: #00ff00;">Legendary</span></td>
+                    </tr>
+                    <tr>
+                        <td>ESL One Katowice 2015</td>
+                        <td>Ninjas in Pyjamas vs. Fnatic</td>
+                        <td><span style="color: #f39c12;">Classic</span></td>
+                    </tr>
+                    <tr>
+                        <td>ESL One Cologne 2015</td>
+                        <td>TSM vs. Virtus.pro</td>
+                        <td><span style="color: #f39c12;">Epic Semifinal</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
