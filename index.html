@@ -6,14 +6,12 @@
     <title>CS:GO 2015 - Server Portal</title>
     <style>
         body {
-            /* Natiahnutie tvojho obrázka na celé pozadie obrazovky */
             background-image: url('XhBdWC.webp');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-color: #0b0f14;
-            
             color: #bdcbf4;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
@@ -23,19 +21,16 @@
             align-items: center;
             min-height: 100vh;
         }
-        
-        /* Priesvitný stredový box pre text a menu */
         .container {
             width: 100%;
             max-width: 800px;
-            background: rgba(11, 19, 31, 0.85); /* Tmavomodrý priesvitný efekt */
+            background: rgba(11, 19, 31, 0.85);
             padding: 40px;
             border: 2px solid #253654;
             box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.9);
             text-align: center;
             box-sizing: border-box;
         }
-
         h1 {
             color: #4a90e2;
             text-transform: uppercase;
@@ -50,8 +45,6 @@
             margin-bottom: 30px;
             font-size: 13px;
         }
-
-        /* MENU - Štýlové textové odkazy */
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -74,8 +67,6 @@
         .nav-item.active {
             color: #00ff00;
         }
-
-        /* SEKCE S TEXTOM */
         .page-section {
             display: none;
             text-align: left;
@@ -97,8 +88,6 @@
             color: #ff4d4d;
             font-weight: bold;
         }
-
-        /* Nové štýly pre tabuľku a inštrukcie */
         .demo-instruction {
             background-color: rgba(255, 255, 255, 0.03);
             padding: 15px;
@@ -393,7 +382,7 @@
         </div>
     </div>
 
-    <!-- JavaScript on Tab Switching & JSONBin Status Checker -->
+    <!-- JavaScript for Tab Switching & JSONBin Status Checker -->
     <script>
         function showPage(pageId, element) {
             var sections = document.getElementsByClassName('page-section');
@@ -410,27 +399,31 @@
             element.classList.add('active');
         }
 
-        // Čítanie stavu serverov z tvojho verejného JSONBin binu
+        // Načítanie stavu serverov z dvoch samostatných JSONBin binov
         function checkServerStatusFromCloud() {
-            fetch('https://api.jsonbin.io/v3/b/6a7c4f6cda38895dfed9f264/latest')
+            // Kontrola Servera 1 (ID: 6a7c5233da38895dfed9fd53)
+            fetch('https://api.jsonbin.io/v3/b/6a7c5233da38895dfed9fd53/latest')
                 .then(res => res.json())
                 .then(data => {
-                    // JSONBin vracia dáta v objekte "record"
-                    const statusData = data.record;
-
-                    // Server 1
                     const el1 = document.getElementById('status-srv1');
-                    if (statusData.server1 === 'online') {
+                    // Očakáva štruktúru: {"status": "online"} alebo {"status": "offline"}
+                    if (data.record.status === 'online') {
                         el1.className = 'status';
                         el1.innerHTML = 'ONLINE';
                     } else {
                         el1.className = 'offline';
                         el1.innerHTML = 'OFFLINE';
                     }
+                })
+                .catch(err => console.error('Chyba server 1:', err));
 
-                    // Server 2
+            // Kontrola Servera 2 (ID: 6a7c5245f5f4af5e290b7c43)
+            fetch('https://api.jsonbin.io/v3/b/6a7c5245f5f4af5e290b7c43/latest')
+                .then(res => res.json())
+                .then(data => {
                     const el2 = document.getElementById('status-srv2');
-                    if (statusData.server2 === 'online') {
+                    // Očakáva štruktúru: {"status": "online"} alebo {"status": "offline"}
+                    if (data.record.status === 'online') {
                         el2.className = 'status';
                         el2.innerHTML = 'ONLINE';
                     } else {
@@ -438,9 +431,7 @@
                         el2.innerHTML = 'OFFLINE';
                     }
                 })
-                .catch(err => {
-                    console.error('Chyba pri načítavaní stavu zo servera:', err);
-                });
+                .catch(err => console.error('Chyba server 2:', err));
         }
 
         // Spustiť ihneď po načítaní stránky
