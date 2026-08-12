@@ -2,166 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GO:COUNTER - A4 Poster</title>
     <style>
-        /* Formát A4 na výšku a tieniaci obal */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
+        body { margin: 0; padding: 0; background-color: #050505; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        
         .a4-poster {
             width: 794px;
-            height: 1123px; /* Presný pomer pre A4 pri 96 DPI */
-            background-image: url('i548685.png'); /* Názov tvojho nového obrázka */
+            height: 1123px;
+            background-image: url('i548685.png');
             background-size: cover;
             background-position: center;
             position: relative;
+            padding: 40px 60px; /* Zmenšené okraje pre viac miesta */
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 50px 40px;
-            font-family: 'Courier New', Courier, monospace;
+            justify-content: space-between; /* Rozloží prvky na celú výšku */
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            color: white;
         }
 
-        /* Tmavý prechod pre lepšiu čitateľnosť textu */
         .a4-poster::before {
             content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(5,8,13,0.9) 0%, rgba(5,8,13,0.4) 40%, rgba(5,8,13,0.95) 80%);
+            position: absolute; top:0; left:0; right:0; bottom:0;
+            background: rgba(0,0,0,0.7); /* Zosilnená čierna pre čitateľnosť */
             z-index: 1;
         }
 
-        .a4-poster > * {
-            position: relative;
-            z-index: 2;
-        }
+        .header, .middle, .footer { position: relative; z-index: 2; }
 
-        /* Horná časť - Výzva */
-        .header h1 {
-            color: #ff4d4d;
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0 0 15px 0;
-            text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
-        }
+        .header h1 { color: #ff4d4d; font-size: 38px; margin: 0 0 10px 0; text-transform: uppercase; }
+        .header h2 { font-size: 24px; margin: 0; font-weight: 300; }
 
-        .header h2 {
-            color: #ffffff;
-            font-size: 20px;
-            font-weight: normal;
-            line-height: 1.4;
-            margin: 0;
-        }
+        .middle { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px; border: 1px solid #4a90e2; }
+        .middle h3 { font-size: 55px; margin: 0; color: #4a90e2; letter-spacing: 5px; }
+        .middle p { font-size: 20px; margin-top: 10px; }
 
-        /* Stredná časť - Hlavný názov projektu */
-        .middle-title {
-            background: rgba(11, 19, 31, 0.85);
-            border: 2px solid #4a90e2;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
-        }
+        .footer { background: rgba(0,0,0,0.6); padding: 25px; border-radius: 10px; }
+        .features { list-style: none; padding: 0; font-size: 22px; text-align: left; display: inline-block; }
+        .features li { margin-bottom: 15px; }
 
-        .middle-title h3 {
-            color: #4a90e2;
-            font-size: 36px;
-            margin: 0;
-            letter-spacing: 3px;
-        }
-
-        .middle-title p {
-            color: #bdcbf4;
-            font-size: 15px;
-            margin: 8px 0 0 0;
-        }
-
-        /* Dolná časť - Vlastnosti a link */
-        .footer {
-            background: rgba(5, 8, 13, 0.92);
-            border: 1px solid #253654;
-            padding: 25px;
-            border-radius: 8px;
-            text-align: left;
-        }
-
-        .features {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px 0;
-            font-size: 16px;
-            color: #ffffff;
-            line-height: 1.8;
-        }
-
-        .link-box {
-            background: #0b0f14;
-            border: 1px dashed #4a90e2;
-            padding: 12px;
-            text-align: center;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-
-        .link-box span {
-            color: #00ff00;
-            font-size: 14px;
-            word-break: break-all;
-            font-weight: bold;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            color: #7084a3;
-            font-size: 15px;
-            font-weight: bold;
-            margin: 0;
-            letter-spacing: 1px;
-        }
+        .link-box { margin-top: 20px; padding: 15px; background: #000; border: 2px solid #4a90e2; }
+        .link-box span { color: #00ff00; font-size: 22px; font-weight: bold; }
     </style>
 </head>
 <body>
-
     <div class="a4-poster">
-        <!-- Horná časť -->
         <div class="header">
             <h1>ATTENTION ALL OLD-SCHOOL PLAYERS!</h1>
-            <h2>Do you miss the good old days of CS:GO 2015?<br>Back when the game was simple, clean, and truly legendary?</h2>
+            <h2>Do you miss the good old days of CS:GO 2015?</h2>
         </div>
 
-        <!-- Stredná časť -->
-        <div class="middle-title">
+        <div class="middle">
             <h3>GO:COUNTER</h3>
             <p>Experience the classic 2015 atmosphere just the way you remember it.</p>
         </div>
 
-        <!-- Dolná časť -->
         <div class="footer">
             <ul class="features">
-                <li>✅ <strong>128-Tick Servers</strong> (smooth gameplay)</li>
-                <li>✅ <strong>Classic 2015 UI & Experience</strong> (no modern clutter)</li>
-                <li>✅ <strong>Fully Functional</strong> (RTV, nominations, ranks, and more)</li>
+                <li>✅ 128-Tick Servers (smooth gameplay)</li>
+                <li>✅ Classic 2015 UI & Experience</li>
+                <li>✅ Fully Functional (RTV, nominations, ranks)</li>
             </ul>
-
             <div class="link-box">
-                <p style="margin: 0 0 5px 0; color: #bdcbf4; font-size: 12px;">Check out our portal for instructions & downloads:</p>
+                <div style="font-size: 16px; margin-bottom: 5px;">Join us here:</div>
                 <span>https://lukasss895.github.io/CSGO.NOSTEAM.NS/</span>
             </div>
-
-            <p class="footer-bottom">See you on the server! 🦾</p>
+            <h2 style="margin-top: 20px;">See you on the server! 🦾</h2>
         </div>
     </div>
-
 </body>
 </html>
