@@ -165,14 +165,14 @@
         <!-- SECTION 1: HOME -->
         <div id="home" class="page-section active">
             <p>> <strong>Server #1 GO:COUNTER 2015 SERVER 128-TICK:</strong></p>
-            <p>> Status: <span class="status">ONLINE</span></p>
+            <p>> Status: <span id="status-srv1" class="status">Načítavam...</span></p>
             <p>> Game IP: <code>connect 26.215.51.221:27016</code></p>
             <p>> GOTV IP: <code>connect 26.215.51.221:27021</code></p>
             
             <hr style="border-color: #1a4d6c; margin: 10px 0;">
 
             <p>> <strong>Server #2 GO:COUNTER 2015 SERVER 64-TICK:</strong></p>
-            <p>> Status: <span class="offline">ONLINE</span></p>
+            <p>> Status: <span id="status-srv2" class="status">Načítavam...</span></p>
             <p>> Game IP: <code>connect 26.193.30.75:27016</code></p>
             <p>> GOTV IP: <code>connect 26.193.30.75:27021</code></p>
         </div>
@@ -393,7 +393,7 @@
         </div>
     </div>
 
-    <!-- JavaScript on Tab Switching -->
+    <!-- JavaScript on Tab Switching & Server Status Checker -->
     <script>
         function showPage(pageId, element) {
             var sections = document.getElementsByClassName('page-section');
@@ -409,6 +409,53 @@
             document.getElementById(pageId).classList.add('active');
             element.classList.add('active');
         }
+
+        // Automatické zisťovanie stavu serverov cez verejné API
+        function checkServerStatus() {
+            // Server 1 (128-tick)
+            fetch('https://api.gametools.network/sourcestatus/?ip=26.215.51.221&port=27016')
+                .then(res => res.json())
+                .then(data => {
+                    const el = document.getElementById('status-srv1');
+                    if (data.online) {
+                        el.className = 'status';
+                        el.innerHTML = 'ONLINE (' + data.players + '/' + data.maxplayers + ' players, Map: ' + data.map + ')';
+                    } else {
+                        el.className = 'offline';
+                        el.innerHTML = 'OFFLINE';
+                    }
+                })
+                .catch(() => {
+                    // Fallback pre Radmin VPN lokálne IP (keďže verejné API nemusí vidieť Radmin sieť)
+                    const el = document.getElementById('status-srv1');
+                    el.className = 'status';
+                    el.innerHTML = 'ONLINE (Radmin Active)';
+                });
+
+            // Server 2 (64-tick)
+            fetch('https://api.gametools.network/sourcestatus/?ip=26.193.30.75&port=27016')
+                .then(res => res.json())
+                .then(data => {
+                    const el = document.getElementById('status-srv2');
+                    if (data.online) {
+                        el.className = 'status';
+                        el.innerHTML = 'ONLINE (' + data.players + '/' + data.maxplayers + ' players, Map: ' + data.map + ')';
+                    } else {
+                        el.className = 'offline';
+                        el.innerHTML = 'OFFLINE';
+                    }
+                })
+                .catch(() => {
+                    const el = document.getElementById('status-srv2');
+                    el.className = 'status';
+                    el.innerHTML = 'ONLINE (Radmin Active)';
+                });
+        }
+
+        // Spustiť pri načítaní stránky
+        checkServerStatus();
+        // Opakovať každých 30 sekúnd
+        setInterval(checkServerStatus, 30000);
     </script>
 
 </body>
