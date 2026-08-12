@@ -21,7 +21,7 @@
             background-size: cover;
             background-position: center;
             position: relative;
-            padding: 60px 50px;
+            padding: 50px 50px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -36,7 +36,7 @@
         .a4-poster::before {
             content: '';
             position: absolute; top:0; left:0; right:0; bottom:0;
-            background: rgba(0,0,0,0.78);
+            background: rgba(0,0,0,0.8);
             z-index: 1;
         }
 
@@ -46,68 +46,74 @@
             width: 100%; 
         }
 
+        /* Horná časť */
+        .header {
+            margin-top: 10px;
+        }
         .header h1 { 
             color: #ff4d4d; 
-            font-size: 46px; 
+            font-size: 44px; 
             margin: 0 0 15px 0; 
             text-transform: uppercase; 
             text-shadow: 0 0 15px rgba(255,77,77,0.6); 
             letter-spacing: 1px;
         }
         .header h2 { 
-            font-size: 25px; 
+            font-size: 24px; 
             margin: 0; 
             font-weight: 300; 
-            line-height: 1.4; 
+            line-height: 1.5; 
             color: #e0e0e0;
         }
 
+        /* Stredná časť */
         .middle { 
-            background: rgba(11, 19, 31, 0.9); 
-            padding: 40px 20px; 
+            background: rgba(11, 19, 31, 0.92); 
+            padding: 45px 20px; 
             border-radius: 14px; 
             border: 2px solid #4a90e2; 
             box-shadow: 0 0 25px rgba(74,144,226,0.4); 
-            width: 90%;
+            width: 92%;
             margin: 0 auto;
         }
         .middle h3 { 
-            font-size: 62px; 
+            font-size: 64px; 
             margin: 0; 
             color: #4a90e2; 
             letter-spacing: 8px; 
-            text-shadow: 0 0 10px rgba(74,144,226,0.5);
+            text-shadow: 0 0 12px rgba(74,144,226,0.6);
         }
         .middle p { 
-            font-size: 23px; 
+            font-size: 24px; 
             margin: 15px 0 0 0; 
             color: #bdcbf4; 
         }
 
+        /* Dolná časť */
         .footer { 
-            background: rgba(0,0,0,0.88); 
-            padding: 40px 30px; 
+            background: rgba(0,0,0,0.9); 
+            padding: 45px 35px; 
             border-radius: 14px; 
             border: 1px solid #253654; 
-            width: 90%;
-            margin: 0 auto;
+            width: 92%;
+            margin: 0 auto 10px auto;
         }
         .features { 
             list-style: none; 
             padding: 0; 
             margin: 0 0 25px 0; 
-            font-size: 23px; 
+            font-size: 24px; 
             text-align: left; 
             display: inline-block; 
-            line-height: 1.9; 
+            line-height: 2; 
         }
         .features li { 
-            margin-bottom: 12px; 
+            margin-bottom: 8px; 
         }
 
         .link-box { 
             margin-top: 15px; 
-            padding: 18px; 
+            padding: 20px; 
             background: #000; 
             border: 2px dashed #4a90e2; 
             border-radius: 8px; 
@@ -121,10 +127,10 @@
         
         .footer h3 { 
             margin: 25px 0 0 0; 
-            font-size: 28px; 
+            font-size: 30px; 
             color: #ffffff; 
             letter-spacing: 1px; 
-            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            text-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
     </style>
 </head>
@@ -146,7 +152,7 @@
                 <li>✅ <strong>Classic 2015 UI & Experience</strong> (no modern clutter)</li>
                 <li>✅ <strong>Fully Functional</strong> (RTV, nominations, ranks)</li>
             </ul>
-            <div style="font-size: 17px; color: #bdcbf4; margin-bottom: 8px;">Check out our portal for instructions & downloads:</div>
+            <div style="font-size: 18px; color: #bdcbf4; margin-bottom: 10px;">Check out our portal for instructions & downloads:</div>
             <div class="link-box">
                 <span>https://lukasss895.github.io/CSGO.NOSTEAM.NS/</span>
             </div>
