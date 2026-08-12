@@ -5,23 +5,25 @@
     <style>
         body { 
             margin: 0; 
-            padding: 20px; 
-            background-color: #050505; 
+            padding: 0; 
+            background-color: #000; 
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            min-height: 100vh; 
-            box-sizing: border-box;
+            height: 100vh; 
+            overflow: hidden;
         }
         
         .a4-poster {
-            width: 794px;
-            height: 1123px;
+            width: 100vw;
+            height: 100vh;
+            max-width: 794px;
+            max-height: 1123px;
             background-image: url('i548685.png');
             background-size: cover;
             background-position: center;
             position: relative;
-            padding: 50px 50px;
+            padding: 30px 40px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -30,13 +32,13 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: white;
-            box-shadow: 0 0 30px rgba(0,0,0,0.9);
+            box-shadow: 0 0 40px rgba(0,0,0,1);
         }
 
         .a4-poster::before {
             content: '';
             position: absolute; top:0; left:0; right:0; bottom:0;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.82);
             z-index: 1;
         }
 
@@ -46,91 +48,83 @@
             width: 100%; 
         }
 
-        /* Horná časť */
-        .header {
-            margin-top: 10px;
-        }
         .header h1 { 
             color: #ff4d4d; 
-            font-size: 44px; 
-            margin: 0 0 15px 0; 
+            font-size: 40px; 
+            margin: 0 0 10px 0; 
             text-transform: uppercase; 
-            text-shadow: 0 0 15px rgba(255,77,77,0.6); 
-            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(255,77,77,0.7); 
         }
         .header h2 { 
-            font-size: 24px; 
+            font-size: 22px; 
             margin: 0; 
             font-weight: 300; 
-            line-height: 1.5; 
+            line-height: 1.4; 
             color: #e0e0e0;
         }
 
-        /* Stredná časť */
         .middle { 
             background: rgba(11, 19, 31, 0.92); 
-            padding: 45px 20px; 
-            border-radius: 14px; 
+            padding: 30px 20px; 
+            border-radius: 12px; 
             border: 2px solid #4a90e2; 
             box-shadow: 0 0 25px rgba(74,144,226,0.4); 
-            width: 92%;
+            width: 95%;
             margin: 0 auto;
         }
         .middle h3 { 
-            font-size: 64px; 
+            font-size: 56px; 
             margin: 0; 
             color: #4a90e2; 
-            letter-spacing: 8px; 
+            letter-spacing: 7px; 
             text-shadow: 0 0 12px rgba(74,144,226,0.6);
         }
         .middle p { 
-            font-size: 24px; 
-            margin: 15px 0 0 0; 
+            font-size: 21px; 
+            margin: 10px 0 0 0; 
             color: #bdcbf4; 
         }
 
-        /* Dolná časť */
         .footer { 
             background: rgba(0,0,0,0.9); 
-            padding: 45px 35px; 
-            border-radius: 14px; 
+            padding: 30px; 
+            border-radius: 12px; 
             border: 1px solid #253654; 
-            width: 92%;
-            margin: 0 auto 10px auto;
+            width: 95%;
+            margin: 0 auto;
         }
         .features { 
             list-style: none; 
             padding: 0; 
-            margin: 0 0 25px 0; 
-            font-size: 24px; 
+            margin: 0 0 20px 0; 
+            font-size: 21px; 
             text-align: left; 
             display: inline-block; 
-            line-height: 2; 
+            line-height: 1.8; 
         }
         .features li { 
             margin-bottom: 8px; 
         }
 
         .link-box { 
-            margin-top: 15px; 
-            padding: 20px; 
+            margin-top: 10px; 
+            padding: 15px; 
             background: #000; 
             border: 2px dashed #4a90e2; 
             border-radius: 8px; 
         }
         .link-box span { 
             color: #00ff00; 
-            font-size: 21px; 
+            font-size: 19px; 
             font-weight: bold; 
             word-break: break-all; 
         }
         
         .footer h3 { 
-            margin: 25px 0 0 0; 
-            font-size: 30px; 
+            margin: 15px 0 0 0; 
+            font-size: 26px; 
             color: #ffffff; 
             letter-spacing: 1px; 
-            text-shadow: 0 0 10px rgba(255,255,255,0.4);
         }
     </style>
 </head>
@@ -152,7 +146,7 @@
                 <li>✅ <strong>Classic 2015 UI & Experience</strong> (no modern clutter)</li>
                 <li>✅ <strong>Fully Functional</strong> (RTV, nominations, ranks)</li>
             </ul>
-            <div style="font-size: 18px; color: #bdcbf4; margin-bottom: 10px;">Check out our portal for instructions & downloads:</div>
+            <div style="font-size: 16px; color: #bdcbf4; margin-bottom: 6px;">Check out our portal for instructions & downloads:</div>
             <div class="link-box">
                 <span>https://lukasss895.github.io/CSGO.NOSTEAM.NS/</span>
             </div>
