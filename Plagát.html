@@ -8,15 +8,17 @@
         .a4-poster {
             width: 794px;
             height: 1123px;
+            /* TU SOM ZMENIL NÁZOV OBRÁZKA NA TVOJ NOVÝ SÚBOR */
             background-image: url('i548685.png');
             background-size: cover;
             background-position: center;
             position: relative;
-            padding: 40px 60px; /* Zmenšené okraje pre viac miesta */
+            padding: 50px 50px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Rozloží prvky na celú výšku */
+            justify-content: space-between; /* Roztiahne bloky na celú výšku A4 */
+            align-items: center;
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: white;
@@ -25,32 +27,34 @@
         .a4-poster::before {
             content: '';
             position: absolute; top:0; left:0; right:0; bottom:0;
-            background: rgba(0,0,0,0.7); /* Zosilnená čierna pre čitateľnosť */
+            background: rgba(0,0,0,0.75); /* Tmavý filter na obrázok */
             z-index: 1;
         }
 
-        .header, .middle, .footer { position: relative; z-index: 2; }
+        .header, .middle, .footer { position: relative; z-index: 2; width: 100%; }
 
-        .header h1 { color: #ff4d4d; font-size: 38px; margin: 0 0 10px 0; text-transform: uppercase; }
-        .header h2 { font-size: 24px; margin: 0; font-weight: 300; }
+        .header h1 { color: #ff4d4d; font-size: 42px; margin: 0 0 15px 0; text-transform: uppercase; text-shadow: 0 0 10px rgba(255,77,77,0.5); }
+        .header h2 { font-size: 24px; margin: 0; font-weight: 300; line-height: 1.4; }
 
-        .middle { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px; border: 1px solid #4a90e2; }
-        .middle h3 { font-size: 55px; margin: 0; color: #4a90e2; letter-spacing: 5px; }
-        .middle p { font-size: 20px; margin-top: 10px; }
+        .middle { background: rgba(11, 19, 31, 0.85); padding: 35px 20px; border-radius: 12px; border: 2px solid #4a90e2; box-shadow: 0 0 20px rgba(74,144,226,0.3); }
+        .middle h3 { font-size: 58px; margin: 0; color: #4a90e2; letter-spacing: 6px; }
+        .middle p { font-size: 22px; margin: 15px 0 0 0; color: #bdcbf4; }
 
-        .footer { background: rgba(0,0,0,0.6); padding: 25px; border-radius: 10px; }
-        .features { list-style: none; padding: 0; font-size: 22px; text-align: left; display: inline-block; }
-        .features li { margin-bottom: 15px; }
+        .footer { background: rgba(0,0,0,0.85); padding: 35px; border-radius: 12px; border: 1px solid #253654; }
+        .features { list-style: none; padding: 0; margin: 0 0 25px 0; font-size: 22px; text-align: left; display: inline-block; line-height: 1.8; }
+        .features li { margin-bottom: 10px; }
 
-        .link-box { margin-top: 20px; padding: 15px; background: #000; border: 2px solid #4a90e2; }
-        .link-box span { color: #00ff00; font-size: 22px; font-weight: bold; }
+        .link-box { margin-top: 15px; padding: 18px; background: #000; border: 2px dashed #4a90e2; border-radius: 8px; }
+        .link-box span { color: #00ff00; font-size: 20px; font-weight: bold; word-break: break-all; }
+        
+        .footer h3 { margin: 25px 0 0 0; font-size: 26px; color: #ffffff; letter-spacing: 1px; }
     </style>
 </head>
 <body>
     <div class="a4-poster">
         <div class="header">
             <h1>ATTENTION ALL OLD-SCHOOL PLAYERS!</h1>
-            <h2>Do you miss the good old days of CS:GO 2015?</h2>
+            <h2>Do you miss the good old days of CS:GO 2015?<br>Back when the game was simple, clean, and truly legendary?</h2>
         </div>
 
         <div class="middle">
@@ -60,15 +64,15 @@
 
         <div class="footer">
             <ul class="features">
-                <li>✅ 128-Tick Servers (smooth gameplay)</li>
-                <li>✅ Classic 2015 UI & Experience</li>
-                <li>✅ Fully Functional (RTV, nominations, ranks)</li>
+                <li>✅ <strong>128-Tick Servers</strong> (smooth gameplay)</li>
+                <li>✅ <strong>Classic 2015 UI & Experience</strong> (no modern clutter)</li>
+                <li>✅ <strong>Fully Functional</strong> (RTV, nominations, ranks)</li>
             </ul>
+            <div style="font-size: 16px; color: #bdcbf4; margin-bottom: 8px;">Check out our portal for instructions & downloads:</div>
             <div class="link-box">
-                <div style="font-size: 16px; margin-bottom: 5px;">Join us here:</div>
                 <span>https://lukasss895.github.io/CSGO.NOSTEAM.NS/</span>
             </div>
-            <h2 style="margin-top: 20px;">See you on the server! 🦾</h2>
+            <h3>See you on the server! 🦾</h3>
         </div>
     </div>
 </body>
