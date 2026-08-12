@@ -160,6 +160,7 @@
             <span class="nav-item" onclick="showPage('files', this)">Files</span>
             <span class="nav-item" onclick="showPage('majors', this)">Majors</span>
             <span class="nav-item" onclick="showPage('predictions', this)">Predictions</span>
+            <span class="nav-item" onclick="showPage('support', this)">Support</span>
         </div>
 
         <!-- SECTION 1: HOME -->
@@ -380,6 +381,32 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <!-- SECTION 8: SUPPORT -->
+        <div id="support" class="page-section">
+            <h3 style="color:#4a90e2; margin-top:0;">Private Support</h3>
+            <p>Did you find a bug or a map error? Let me know here. It will be sent directly to my email and no one else will see it.</p>
+
+            <form action="https://formspree.io/f/xdenznzr" method="POST">
+                <label style="display: block; margin-top: 10px;">Your Name (Player):</label>
+                <input type="text" name="player_name" required placeholder="E.g. JohnDoe" style="width:100%; padding:10px; margin-top: 5px; background: #333; border: 1px solid #444; color: #fff; border-radius: 4px; box-sizing: border-box;">
+
+                <label style="display: block; margin-top: 10px;">Your Email (if you want a reply):</label>
+                <input type="email" name="_replyto" placeholder="your@email.com" style="width:100%; padding:10px; margin-top: 5px; background: #333; border: 1px solid #444; color: #fff; border-radius: 4px; box-sizing: border-box;">
+
+                <label style="display: block; margin-top: 10px;">Issue Category:</label>
+                <select name="category" style="width:100%; padding:10px; margin-top: 5px; background: #333; border: 1px solid #444; color: #fff; border-radius: 4px; box-sizing: border-box;">
+                    <option value="Bug">Server Bug</option>
+                    <option value="Map Error">Map Error / Stuck</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label style="display: block; margin-top: 10px;">Problem Description:</label>
+                <textarea name="message" rows="5" required placeholder="Describe what happened..." style="width:100%; padding:10px; margin-top: 5px; background: #333; border: 1px solid #444; color: #fff; border-radius: 4px; box-sizing: border-box;"></textarea>
+
+                <button type="submit" style="background: #4CAF50; color: white; padding: 12px 15px; border: none; border-radius: 4px; cursor: pointer; width:100%; font-weight: bold; margin-top: 15px;">Send Message</button>
+            </form>
         </div>
     </div>
 
